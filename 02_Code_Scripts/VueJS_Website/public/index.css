@@ -1,0 +1,11 @@
+:root {
+    --bodycolorgradient1:rgb(0, 0, 0);
+    --bodycolorgradient2:rgb(106, 112, 148);
+    --colorgradient1:rgba(180, 107, 58, 0.979);
+    --colorgradient2:rgb(106, 112, 148);
+    --colorgradient3:rgb(192, 140, 92);
+  }
+body {
+    background-image: linear-gradient(90deg,var(--bodycolorgradient1),var(--bodycolorgradient2));
+    left:0;
+}
