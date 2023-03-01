@@ -128,7 +128,12 @@ export default {
   border:solid #ee8a17 3px;
   background-color: rgb(236, 170, 109);
 }
-
+@media screen and (max-height: 199px) {
+  .icon {
+    height: 30px;
+    width: 30px;
+  }
+}
 @media screen and (min-height: 200px) {
   .icon {
     height: 50px;
