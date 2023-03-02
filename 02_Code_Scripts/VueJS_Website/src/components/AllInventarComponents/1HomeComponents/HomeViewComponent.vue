@@ -8,7 +8,7 @@
             <img class="profilePictureImg" :src="projectsImg" alt="">
         </div>
         <div class="post" >
-           
+            {{ datapoints.post }}
         </div>
         <div class="points">
             {{ datapoints.attributedspoints }}
@@ -35,10 +35,10 @@
             },
             methods: {
                 changeColorPoints() {
-                    if (this.datapoints.attributedspoints == 235) {
+                    if (this.attributedspoints == 235) {
                         document.getElementsByClassName("points").style.color = "blue";
                     }
-                    if (this.datapoints.attributedspoints > 30) {
+                    if (this.datapoints.attributedspoints > 70) {
                         document.getElementsByClassName("points").style.color = "red";
                     }
                 }

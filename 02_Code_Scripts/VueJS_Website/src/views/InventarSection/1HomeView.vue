@@ -32,21 +32,21 @@ export default {
     return {
        profilePictureImgs : 
                         [ 
-                        {profileimgID:1,profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg")},
-                        {profileimgID:2,profilePictureImg2: require("@/assets/Profilpictures/profilePicture (2).jpg")},
-                        {profileimgID:3,profilePictureImg3: require("@/assets/Profilpictures/profilePicture (3).jpg")},
-                        {profileimgID:4,profilePictureImg4: require("@/assets/Profilpictures/profilePicture (4).jpg")},
-                        {profileimgID:5,profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg")},
+                        {profileimgID:1,},
+                        {profileimgID:2,},
+                        {profileimgID:3,},
+                        {profileimgID:4,profilePictureImg: require("@/assets/Profilpictures/profilePicture (4).jpg")},
+                        {profileimgID:5,profilePictureImg: require("@/assets/Profilpictures/profilePicture (5).jpg")},
                         ],
                 posts : [
-                        {postid:1,post1:"Ich habe heute gut geschlafen! "},
-                        {postid:2,post2:"Ich habe heute schlecht geschlafen! "},
-                        {postid:3,post3:"Ich habe heute ausreichend geschlafen! "}
+                        {postid:1,},
+                        {postid:2,},
+                        {postid:3,}
                         ],
                 points: [
-                        {point_id:1, attributedspoints:78},
-                        {point_id:2, attributedspoints:235},
-                        {point_id:3, attributedspoints:35}
+                        {point_id:1, profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), post:"Ich habe heute schlecht geschlafen! ", attributedspoints:78},
+                        {point_id:2, profilePictureImg: require("@/assets/Profilpictures/profilePicture (2).jpg"), post:"Ich habe heute ausreichend geschlafen! ", attributedspoints:235},
+                        {point_id:3, profilePictureImg: require("@/assets/Profilpictures/profilePicture (3).jpg"), post:"Ich habe heute gut geschlafen! ", attributedspoints:35}
                         ],
 
                         date : "17.12.2009 15:34",
