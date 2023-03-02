@@ -4,7 +4,9 @@
             <img class="profilePictureImg" :src="profilePictureImg5" alt="">
         </div> 
         <div class="underContainerFriends">
-            {{ message }}
+            <div>{{Vorname}}</div>
+            <div>{{ Name }}</div>
+            <div>{{ Schule }}</div>
         </div>
     </div>
        
@@ -21,9 +23,9 @@ export default{
                 profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg"),
 
                 projectsImg: require("@/assets/projectsImg.png"),
-                message : "Ich hätte eine Frage bezihungsweise der Rechnung vonasefjweriaogfhaoigrigheqaioghjroiegajhiogharüeäoigharoiehgarueihgbpiuorhreöoiughaseoighraudksöfrghnbaüosduighasdoghasdkpiughbnasdoiguhadsogöia ",
-                points: 78,
-                date : "17.12.2009 15:34",
+                Vorname  : "Leopold",
+                Name : "Inas",
+                Schule: "Bfo Brig"
 
                 }
             }
@@ -49,6 +51,9 @@ export default{
     background-color: rgb(148, 144, 141);
 }
 .underContainerFriends{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     /*borders*/ 
     margin-left: 10px;
     border: solid black 2px;

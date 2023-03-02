@@ -2,13 +2,13 @@
 <div class="Postcontainer">
     <div class="Post">
         <div class="photoPlacement">
-            <img class="profilePictureImg" :src="profilePictureImg4" alt="">
+            <img class="profilePictureImg" :src="profilePictureImg1" alt="">
         </div>
         <div class="typeOfPost">
             <img class="profilePictureImg" :src="projectsImg" alt="">
         </div>
         <div class="post" >
-            {{posts.post1}}
+            {{post1}}
         </div>
         <div class="points">
             {{points}}
@@ -25,7 +25,10 @@
     export default {
        data() {
             return {
-                profilePictureImgs : [ 
+                profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg"),
+                post1:"Ich habe heute gut geschlafen! ",
+                projectsImg: require("@/assets/projectsImg.png"),
+                /*profilePictureImgs : [ 
                         {profileimgID:1,profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg")},
                         {profileimgID:2,profilePictureImg2: require("@/assets/Profilpictures/profilePicture (2).jpg")},
                         {profileimgID:3,profilePictureImg3: require("@/assets/Profilpictures/profilePicture (3).jpg")},
@@ -33,13 +36,13 @@
                         {profileimgID:5,profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg")},
                         ],
 
-                        projectsImg: require("@/assets/projectsImg.png"),
+                        
 
                 posts : [
                         {postid:1,post1:"Ich habe heute gut geschlafen! "},
                         {postid:2,post2:"Ich habe heute schlecht geschlafen! "},
                         {postid:3,post3:"Ich habe heute ausreichend geschlafen! "}
-                        ],
+                        ]*/
 
                         points: 78,
 

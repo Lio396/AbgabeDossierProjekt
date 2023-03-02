@@ -1,9 +1,17 @@
 <template>
+  <div class="BFOtitel">
+    BFO Schule
+    <div class="Flagge">
+      <img :src="flagImg" alt="">
+    </div>
+  </div>
+  
     <div class="homeContainer">
        <select name="custom-select" class="dropdown">
         <option value="0">Projekte</option>
         <option value="1">Alles</option>
         <option value="2">Hilfe</option>
+        <option value="3">Schule</option>
        </select>
       <br>
       <div class="HomeViewComponent">
@@ -22,6 +30,11 @@
 import HomeViewComponent from '@/components/AllInventarComponents/1HomeComponents/HomeViewComponent.vue'
 
 export default {
+  data(){
+    return {
+      flagImg: require("@/assets/Flaggen/Brig_flag.png")
+    }
+  },
   components: {
     HomeViewComponent
   }
@@ -29,6 +42,17 @@ export default {
 </script>
 
 <style>
+.BFOtitel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: aliceblue;
+  margin : 15px 15px 15px 15px;
+}
+.Flagge:hover {
+  opacity: 0.7;
+}
 .homeContainer{
   z-index: 1;
   position: relative;

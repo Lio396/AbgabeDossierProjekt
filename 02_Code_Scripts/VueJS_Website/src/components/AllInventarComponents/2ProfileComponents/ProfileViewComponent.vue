@@ -1,7 +1,17 @@
 <template>
        <div class="outerbiography">
         <div class="biography">
-           
+            <div class="underbiography">
+                <div class="inf1">Name : {{ Name }}</div>
+                <br>
+                <div class="inf1">Vorname :  {{ Vorname }} </div>
+                <br>
+                <div class="inf1">Schule : {{Schule}}</div>
+                <br>
+                <div class="inf1">Geschlecht : {{Geschlecht}}</div>
+                <br>
+                <div class="inf1">Eintrittsdatum : {{ Eintrittsdatum }}</div>
+            </div>
         </div>
        </div> 
     
@@ -9,6 +19,19 @@
 
 <script>
 
+
+export default {
+  data(){
+    return {
+        Name : "Mustermann",
+        Vorname: "Max",
+        Schule: "Bfo",
+        Geschlecht: "Mann",
+        Eintrittsdatum: "12.05.2024"
+
+    }
+  }
+}
 </script>
 
 <style>
@@ -38,6 +61,9 @@
     
 }
 .biography {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(148, 144, 141);
     float: bottom;
     height: 100px;
@@ -47,5 +73,6 @@
     border-radius: 5px;
     height: 300px;
 }
+
 
 </style>
