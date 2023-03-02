@@ -20,7 +20,7 @@ export default {
                 profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg"),
 
                 projectsImg: require("@/assets/projectsImg.png"),
-                conv : "Häsch du letsch mal gseh was passiert isch",
+                conv : "Häsch dü letsch mal gseh was passiert isch ?",
                 points: 78,
                 date : "17.12.2009 15:34",
                 }

@@ -1,8 +1,8 @@
 <template>
   <div class="BFOtitel">
     BFO Schule
-    <div class="Flagge">
-      <img :src="flagImg" alt="">
+    <div class="flaggeborder">
+      <img :src="flagImg" alt="" class="flagimg">
     </div>
   </div>
   
@@ -44,14 +44,28 @@ export default {
 <style>
 .BFOtitel{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 60px;
   color: aliceblue;
   margin : 15px 15px 15px 15px;
 }
-.Flagge:hover {
+.flaggeborder {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border:solid black 2px;
+  border-radius: 100%;
+  background-color: rgb(148, 144, 141);
+}
+.flaggeborder:hover {
   opacity: 0.7;
+}
+.flagimg{
+  height: 70%;
+  width: 70%;
 }
 .homeContainer{
   z-index: 1;
