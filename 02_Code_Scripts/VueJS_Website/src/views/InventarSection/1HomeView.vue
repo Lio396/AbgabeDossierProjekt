@@ -14,9 +14,9 @@
         <option value="3">Schule</option>
        </select>
       <br>
-      <div class="HomeViewComponent">
-        <div class="home">
-          <HomeViewComponent class="homeComponent"/>
+      <div class="HomeViewComponent" v-for="post in posts" :key="post.postid" >
+        <div class="home">      
+          <HomeViewComponent class="homeComponent" />
           <HomeViewComponent class="homeComponent"/>
           <HomeViewComponent class="homeComponent"/>
         </div>
@@ -32,7 +32,24 @@ import HomeViewComponent from '@/components/AllInventarComponents/1HomeComponent
 export default {
   data(){
     return {
-      flagImg: require("@/assets/Flaggen/Brig_flag.png")
+       profilePictureImgs : 
+                        [ 
+                        {profileimgID:1,profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg")},
+                        {profileimgID:2,profilePictureImg2: require("@/assets/Profilpictures/profilePicture (2).jpg")},
+                        {profileimgID:3,profilePictureImg3: require("@/assets/Profilpictures/profilePicture (3).jpg")},
+                        {profileimgID:4,profilePictureImg4: require("@/assets/Profilpictures/profilePicture (4).jpg")},
+                        {profileimgID:5,profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg")},
+                        ],
+                posts : [
+                        {postid:1,post1:"Ich habe heute gut geschlafen! "},
+                        {postid:2,post2:"Ich habe heute schlecht geschlafen! "},
+                        {postid:3,post3:"Ich habe heute ausreichend geschlafen! "}
+                        ],
+
+                        points: 78,
+
+                        date : "17.12.2009 15:34",
+                        flagImg: require("@/assets/Flaggen/Brig_flag.png")
     }
   },
   components: {

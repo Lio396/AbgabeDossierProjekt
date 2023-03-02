@@ -8,13 +8,13 @@
             <img class="profilePictureImg" :src="projectsImg" alt="">
         </div>
         <div class="post" >
-            {{post1}}
+            {{ data.post }}
         </div>
         <div class="points">
-            {{points}}
+            
         </div>
         <div class="dateAndHour">
-            {{date}}
+           
         </div>
     </div>  
 </div>
@@ -28,26 +28,11 @@
                 profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg"),
                 post1:"Ich habe heute gut geschlafen! ",
                 projectsImg: require("@/assets/projectsImg.png"),
-                /*profilePictureImgs : [ 
-                        {profileimgID:1,profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg")},
-                        {profileimgID:2,profilePictureImg2: require("@/assets/Profilpictures/profilePicture (2).jpg")},
-                        {profileimgID:3,profilePictureImg3: require("@/assets/Profilpictures/profilePicture (3).jpg")},
-                        {profileimgID:4,profilePictureImg4: require("@/assets/Profilpictures/profilePicture (4).jpg")},
-                        {profileimgID:5,profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg")},
-                        ],
-
-                        
-
-                posts : [
-                        {postid:1,post1:"Ich habe heute gut geschlafen! "},
-                        {postid:2,post2:"Ich habe heute schlecht geschlafen! "},
-                        {postid:3,post3:"Ich habe heute ausreichend geschlafen! "}
-                        ]*/
-
-                        points: 78,
-
-                        date : "17.12.2009 15:34",
+               
                 }
+            },
+            props: {
+                data:Object
             }
         }
 </script>
