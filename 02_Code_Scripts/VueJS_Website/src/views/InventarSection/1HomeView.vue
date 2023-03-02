@@ -14,11 +14,9 @@
         <option value="3">Schule</option>
        </select>
       <br>
-      <div class="HomeViewComponent" v-for="post in posts" :key="post.postid" >
-        <div class="home">      
-          <HomeViewComponent class="homeComponent" />
-          <HomeViewComponent class="homeComponent"/>
-          <HomeViewComponent class="homeComponent"/>
+      <div class="HomeViewComponent" >
+        <div class="home" v-for="littlepoints in points"  :key="littlepoints.point_id">      
+          <HomeViewComponent class="homeComponent" :datapoints="littlepoints"/>
         </div>
       </div>
     </div>
@@ -45,8 +43,11 @@ export default {
                         {postid:2,post2:"Ich habe heute schlecht geschlafen! "},
                         {postid:3,post3:"Ich habe heute ausreichend geschlafen! "}
                         ],
-
-                        points: 78,
+                points: [
+                        {point_id:1, attributedspoints:78},
+                        {point_id:2, attributedspoints:235},
+                        {point_id:3, attributedspoints:35}
+                        ],
 
                         date : "17.12.2009 15:34",
                         flagImg: require("@/assets/Flaggen/Brig_flag.png")
@@ -82,7 +83,6 @@ export default {
 }
 .flagimg{
   height: 70%;
-  width: 70%;
 }
 .homeContainer{
   z-index: 1;
@@ -115,16 +115,16 @@ export default {
 }
 .HomeViewComponent {
   width: 100%;
-  display: flex;
-  justify-content: center;
+
 }
 .home {
+  display: block;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 .homeComponent {
-  display: block;
+  
   width: 100%;
   margin-top: 80px;
   

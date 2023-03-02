@@ -8,10 +8,10 @@
             <img class="profilePictureImg" :src="projectsImg" alt="">
         </div>
         <div class="post" >
-            {{ data.post }}
+           
         </div>
         <div class="points">
-            
+            {{ datapoints.attributedspoints }}
         </div>
         <div class="dateAndHour">
            
@@ -28,11 +28,20 @@
                 profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg"),
                 post1:"Ich habe heute gut geschlafen! ",
                 projectsImg: require("@/assets/projectsImg.png"),
-               
                 }
             },
             props: {
-                data:Object
+                datapoints:Object
+            },
+            methods: {
+                changeColorPoints() {
+                    if (this.datapoints.attributedspoints == 235) {
+                        document.getElementsByClassName("points").style.color = "blue";
+                    }
+                    if (this.datapoints.attributedspoints > 30) {
+                        document.getElementsByClassName("points").style.color = "red";
+                    }
+                }
             }
         }
 </script>
