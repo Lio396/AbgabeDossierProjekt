@@ -4,9 +4,7 @@
             <img class="profilePictureImg" :src="dataCharacterFriends.profilePictureImg" alt="">
         </div> 
         <div class="underContainerFriends">
-            <div>{{dataCharacterFriends.Vorname}}</div>
-             -
-            <div>{{dataCharacterFriends.Nachname}}</div>
+            <div>{{dataCharacterFriends.Vorname}} - {{dataCharacterFriends.Nachname}}</div>
         </div>
     </div>
        

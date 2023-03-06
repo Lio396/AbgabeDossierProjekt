@@ -36,7 +36,7 @@ export default {
       urlIsEmpty:true,
       character: [
               {
-              ID:1, 
+              ID:6, 
               Vorname: "Michael",
               Nachname: "Bodenmatter",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), 
@@ -50,8 +50,8 @@ export default {
               url: null
               },
               {
-              ID:2, 
-              Vorname: "Anton",
+              ID:5, 
+              Vorname: "Melanie",
               Nachname: "Felix",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (2).jpg"), 
               titel : "Beschwerde",
@@ -64,8 +64,8 @@ export default {
               url: null
               },
               {
-              ID:3,
-              Vorname: "Brigitte",
+              ID:4,
+              Vorname: "Hans",
               Nachname: "Geiger",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (3).jpg"), 
               titel : "Frage",
@@ -78,7 +78,7 @@ export default {
               url: null
               },
               {
-              ID:4, 
+              ID:3, 
               Vorname: "Michael",
               Nachname: "Bodenmatter",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), 
@@ -92,7 +92,7 @@ export default {
               url:"https://www.youtube.com/embed/watch?v=xJAfLdUgdc4&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&ab_channel=WaelYasmina"
               },
               {
-              ID:5, 
+              ID:2, 
               Vorname: "Miguel",
               Nachname: "Hernandez",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (9).jpg"), 
@@ -106,7 +106,7 @@ export default {
               url:null
               },
               {
-              ID:6, 
+              ID:1, 
               Vorname: "Uan",
               Nachname: "Keiji",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (10).jpg"), 
