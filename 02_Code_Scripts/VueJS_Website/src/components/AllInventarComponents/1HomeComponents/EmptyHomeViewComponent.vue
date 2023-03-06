@@ -18,7 +18,7 @@
 }
 .inputForPost::placeholder {
   color: rgb(20, 20, 20);
-  opacity: 1; /* Firefox */
+  opacity: 1; 
 }
 </style>
 

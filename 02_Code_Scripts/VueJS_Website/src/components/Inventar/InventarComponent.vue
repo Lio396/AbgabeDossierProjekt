@@ -2,8 +2,8 @@
     <div class="inventarContainer" >
       <table class="inventarBar" >
         <tr> 
-        <router-link to="/home" @click="homeClick" class="icon">
-          <td class="icons">
+        <router-link to="/home" @click="homeClick" class="icon" >
+          <td class="icons" >
             <img class="iconImg"  v-bind:src=homeImg>
           </td>
         </router-link>
@@ -64,14 +64,19 @@ export default {
       qnaImg: require("@/assets/qnaImg.png"),
       learnmaterialImg: require("@/assets/learnmaterialImg.png"),
       todolistImg: require("@/assets/todolistImg.png"),
-      gameImg: require("@/assets/gameImg.png")
-    }
-  }, methods: {
+      gameImg: require("@/assets/gameImg.png"),
+            }
+          },
+   methods: {
     homeClick(){
       this.login = false;
       this.$emit('homeClick',this.login)  
     }
-  }
+  },
+  props: 
+    {
+        datacharacter:Object,   
+    },
 }
 </script>
 

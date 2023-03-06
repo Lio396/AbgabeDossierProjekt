@@ -1,12 +1,12 @@
 <template>
     <div class="outerContainerFriends">
         <div class="iconProfileOfFriends">
-            <img class="profilePictureImg" :src="profilePictureImg5" alt="">
+            <img class="profilePictureImg" :src="dataCharacterFriends.profilePictureImg" alt="">
         </div> 
         <div class="underContainerFriends">
-            <div>{{Vorname}}</div>
-            <div>{{ Name }}</div>
-            <div>{{ Schule }}</div>
+            <div>{{dataCharacterFriends.Vorname}}</div>
+             -
+            <div>{{dataCharacterFriends.Nachname}}</div>
         </div>
     </div>
        
@@ -14,21 +14,10 @@
 
 <script>
 export default{
-        data() {
-            return {
-                profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg"),
-                profilePictureImg2: require("@/assets/Profilpictures/profilePicture (2).jpg"),
-                profilePictureImg3: require("@/assets/Profilpictures/profilePicture (3).jpg"),
-                profilePictureImg4: require("@/assets/Profilpictures/profilePicture (4).jpg"),
-                profilePictureImg5: require("@/assets/Profilpictures/profilePicture (5).jpg"),
-
-                projectsImg: require("@/assets/projectsImg.png"),
-                Vorname  : "Leopold",
-                Name : "Inas",
-                Schule: "Bfo Brig"
-
-                }
-            }
+            props: 
+            {
+            dataCharacterFriends:Object,   
+            },
         }
 </script>
 
@@ -50,9 +39,12 @@ export default{
     border-radius: 100%;
     background-color: rgb(148, 144, 141);
 }
+.profileOfFriends {
+    height: 30px;
+}
 .underContainerFriends{
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     align-items: center;
     /*borders*/ 
     margin-left: 10px;

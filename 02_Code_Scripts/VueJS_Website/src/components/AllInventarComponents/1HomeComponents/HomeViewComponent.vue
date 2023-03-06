@@ -87,7 +87,6 @@
     width: 70px;
     height: 70px;
     /*colors*/
-    
 }
 
 .photoPlacement {

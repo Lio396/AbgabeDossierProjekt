@@ -73,6 +73,9 @@ export default {
     border-radius: 5px;
     height: 300px;
 }
+.inf1 {
+    margin: 10px;
+}
 
 
 </style>

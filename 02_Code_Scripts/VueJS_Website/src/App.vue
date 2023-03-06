@@ -11,8 +11,8 @@
       <SignUpPage :signUp=this.signUp v-if="signUp"/>
     </div>
   </div>
-  <div class="view">
-    <router-view  v-if="!login" class="modeActivated"/>
+  <div class="view" >
+    <router-view  v-if="!login" class="modeActivated" />
   </div>
 </template>
 
@@ -27,7 +27,8 @@ export default {
         return {
           inventar: false,
           login: false,
-          signUp: false
+          signUp: false,
+          
         }
     },
     components: {
