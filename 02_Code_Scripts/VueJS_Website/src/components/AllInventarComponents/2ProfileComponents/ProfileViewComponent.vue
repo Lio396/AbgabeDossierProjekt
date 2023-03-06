@@ -1,18 +1,24 @@
 <template>
        <div class="outerbiography">
         <div class="biography">
+            <div class="profileIMGBorder">
+                <img class="profileIMG" :src="profilePictureImg" alt="">
+            </div>
             <div class="underbiography">
                 <div class="inf1">Name : {{ Name }}</div>
                 <br>
                 <div class="inf1">Vorname :  {{ Vorname }} </div>
                 <br>
-                <div class="inf1">Schule : {{Schule}}</div>
+                <div class="inf1">Schule : {{Schule}} </div>
                 <br>
                 <div class="inf1">Geschlecht : {{Geschlecht}}</div>
                 <br>
                 <div class="inf1">Eintrittsdatum : {{ Eintrittsdatum }}</div>
             </div>
-        </div>
+            <div class="infIMG">
+                <img class="flagInProfile" :src="flagImg" alt="">
+            </div>
+        </div>  
        </div> 
     
 </template>
@@ -23,9 +29,11 @@
 export default {
   data(){
     return {
+        profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"),
+        flagImg: require("@/assets/Flaggen/Visp_flag.png"),
         Name : "Mustermann",
         Vorname: "Max",
-        Schule: "Bfo",
+        Schule: "Bfo Visp",
         Geschlecht: "Mann",
         Eintrittsdatum: "12.05.2024"
 
@@ -60,7 +68,17 @@ export default {
     align-items: center;
     
 }
+.profileIMGBorder{
+    margin: 20px;
+}
+.profileIMG {
+    border: solid black 1px;
+    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+}
 .biography {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,9 +91,30 @@ export default {
     border-radius: 5px;
     height: 300px;
 }
-.inf1 {
-    margin: 10px;
+.flagInProfile{
+    height: 25px;
+    width: 25px;
 }
+.inf1 {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    
+}
+.infIMG {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border:solid black 1px;
+    border-radius: 100%;
+    top: -30px;
+    left: 95%;
+    background-color: rgb(148, 144, 141);
+}
+
 
 
 </style>
