@@ -2,42 +2,42 @@ drop database if exists schule;
 create database if not exists schule;
 use schule;
 
-drop table if exists Faecher;
-create table if not exists Faecher 
+drop table if exists profil;
+create table if not exists profil  
 (
-Fach_id int not null auto_increment,
-Fachname varchar(45),
-Fachstunden int,
-Fachtype varchar(100),
-Primary key (Fach_id)
+profil_id int not null auto_increment,
+profilVorname varchar(45),
+profilNachname varchar(45),
+profilPicture varchar(45),
+profilType varchar(45),
+Primary key (profil_id)
 );
 
-Insert into Faecher 
-(Fachname, Fachstunden, Fachtype)
+Insert into profil 
+(profilName, profilNachname, profilPicture, profilType)
 Values 
-("Chemie", 1 , "Naturlehre"),
-("Physik", 2 , "Naturlehre"),
-("Geometrie", 3 , "Mathematik"),
-("Algebra", 4 , "Mathematik"),
-("Französisch", 5 , "Sprache"),
-("Deutsch", 6 , "Sprache"),
-("Englisch", 7 , "Sprache"),
-("Wirtschaft", 8 , "Wirtschaft"),
-("Recht", 9 , "Wirtschaft");
+("Michael", "Bodenmatter" ,"@/assets/Profilpictures/profilePicture (1).jpg"),
+("Michaela", "Bodenmatter" , "@/assets/Profilpictures/profilePicture (2).jpg"),
+("Hans", "Geiger" , "@/assets/Profilpictures/profilePicture (3).jpg"),
+("Anton", "Felix" , "@/assets/Profilpictures/profilePicture (4).jpg"),
+("Brigitte", "Geiger" , "@/assets/Profilpictures/profilePicture (5).jpg"),
+("Melanie", "Felix", "@/assets/Profilpictures/profilePicture (6).jpg");
 
 /* Datenbank für Storys und Posts*/
 drop table if exists Post;
 create table if not exists Post 
 (
 Post_id int not null auto_increment,
-Postname varchar(45),
+Posttitel varchar(45),
 Posttext varchar(1000),
+Posttitel int,
+Postdate varchar(45),
 Primary key (Post_id)
 );
 
 Insert into Post
-(Postname, Posttext)
+(Postname, Posttext, Posttitel, Postdate)
 Values 
-("Hallo", "Lorem"),
-("Hi", "Morel"),
-("Hola", "Remlo")
+("Hallo", "Lorem","Projekt",789),
+("Hi", "Morel","Schlaf",45),
+("Hola", "Remlo","schlechter Schlaf",13)
