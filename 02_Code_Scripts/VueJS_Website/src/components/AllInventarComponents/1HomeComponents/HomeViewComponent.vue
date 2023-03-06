@@ -23,7 +23,7 @@
                 {{ datacharacter.attributedpoints }}
             </div>
             <div class="dateAndHour">
-                {{ datacharacter.date }}
+                {{ datacharacter.date }} - {{datacharacter.hour}}
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@ export default {
     },
     methods: {
         changeColorPoints() {
-            if (this.datacharacter.attributedpoints >= 70) {
+            if (this.datacharacter.attributedpoints > 70) {
                 document.getElementsByClassName("points").varColor.style.color = "blue"
             }
             else {
