@@ -64,7 +64,7 @@ export default {
   z-index: 3;
 }
 .view {
-  margin-top: 50px;
+  margin-top: 100px;
   z-index: 10;
 }
 .components {

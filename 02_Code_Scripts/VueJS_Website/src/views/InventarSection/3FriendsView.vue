@@ -1,5 +1,8 @@
 <template>
     <div class="friendsContainer">
+      <div class="filter">
+        <img :src="loupeIcon" class="loupeIcon" alt="">
+      </div>
       <div class="friendsIconBorder">
         <div class="friendsIcon">
           <img :src="friendsImg" alt="">
@@ -24,6 +27,7 @@ export default {
   data(){
     return {
       friendsImg: require("@/assets/friendsImg.png"),
+      loupeIcon: require("@/assets/loupe.png"),
     }
   },
   components: {
@@ -67,6 +71,22 @@ export default {
     border: solid black 2px;
     border-radius: 100%;
   }
-  
- 
+  .filter {
+    position : absolute;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 10px;
+    right: 30px;
+    background-color: rgb(148, 144, 141);
+    height: 50px;
+    width: 150px;
+    border: solid black 2px;
+    border-radius: 10px;
+  }
+ .loupeIcon {
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+ }
     </style>

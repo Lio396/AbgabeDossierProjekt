@@ -1,11 +1,8 @@
 <template>
   <div class="BFOtitel">
     BFO Schule
-    <div class="flaggeborder">
-      <img :src="flagImg" alt="" class="flagimg">
-    </div>
   </div>
-  
+   
     <div class="homeContainer">
        <select name="custom-select" class="dropdown">
         <option value="0">Projekte</option>
@@ -13,10 +10,15 @@
         <option value="2">Hilfe</option>
         <option value="3">Schule</option>
        </select>
+       
       <br>
-      <div class="HomeViewComponent" >
-        <div class="home" v-for="littlepoints in points"  :key="littlepoints.point_id">      
-          <HomeViewComponent class="homeComponent" :datapoints="littlepoints"/>
+      
+      <div class="homeViewComponent" >  
+        <div class="input">
+          <EmptyHomeViewComponent class="inputHomeComponent"/>
+        </div>
+        <div class="home" v-for="littlecharacter in character"  :key="littlecharacter.ID">  
+          <HomeViewComponent class="homeComponent" :datacharacter="littlecharacter" urlIsEmptyProp="urlIsEmpty"/>
         </div>
       </div>
     </div>
@@ -26,35 +28,76 @@
 // @ is an alias to /src
 
 import HomeViewComponent from '@/components/AllInventarComponents/1HomeComponents/HomeViewComponent.vue'
+import EmptyHomeViewComponent from '@/components/AllInventarComponents/1HomeComponents/EmptyHomeViewComponent.vue'
 
 export default {
   data(){
     return {
-       profilePictureImgs : 
-                        [ 
-                        {profileimgID:1,},
-                        {profileimgID:2,},
-                        {profileimgID:3,},
-                        {profileimgID:4,profilePictureImg: require("@/assets/Profilpictures/profilePicture (4).jpg")},
-                        {profileimgID:5,profilePictureImg: require("@/assets/Profilpictures/profilePicture (5).jpg")},
-                        ],
-                posts : [
-                        {postid:1,},
-                        {postid:2,},
-                        {postid:3,}
-                        ],
-                points: [
-                        {point_id:1, profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), post:"Ich habe heute schlecht geschlafen! ", attributedspoints:78},
-                        {point_id:2, profilePictureImg: require("@/assets/Profilpictures/profilePicture (2).jpg"), post:"Ich habe heute ausreichend geschlafen! ", attributedspoints:235},
-                        {point_id:3, profilePictureImg: require("@/assets/Profilpictures/profilePicture (3).jpg"), post:"Ich habe heute gut geschlafen! ", attributedspoints:35}
-                        ],
-
-                        date : "17.12.2009 15:34",
-                        flagImg: require("@/assets/Flaggen/Brig_flag.png")
+      urlIsEmpty:true,
+      character: [
+              {
+              ID:1, 
+              Vorname: "Michael",
+              Nachname: "Bodenmatter",
+              profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), 
+              titel : "Schlaf",
+              post:"Ich habe heute schlecht geschlafen !", 
+              attributedspoints: 78, 
+              date : "17.12.2009 15:34",
+              projectsImg: null,
+              specialPost:false,
+              flagImg: require("@/assets/Flaggen/Brig_flag.png"),
+              url: null
+              },
+              {
+              ID:2, 
+              Vorname: "Anton",
+              Nachname: "Felix",
+              profilePictureImg: require("@/assets/Profilpictures/profilePicture (2).jpg"), 
+              titel : "Beschwerde",
+              post:"Ich habe heute ausreichend geschlafen !", 
+              attributedspoints: 235, 
+              date : "18.12.2009 12:19",
+              projectsImg: null,
+              specialPost:false,
+              flagImg: require("@/assets/Flaggen/Brig_flag.png"),
+              url: null
+              },
+              {
+              ID:3,
+              Vorname: "Brigitte",
+              Nachname: "Geiger",
+              profilePictureImg: require("@/assets/Profilpictures/profilePicture (3).jpg"), 
+              titel : "Frage",
+              post:"Ich habe heute gut geschlafen! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore itaque atque debitis exercitationem amet deleniti dolores quae unde, inventore sequi cum maiores in sed impedit pariatur ut dolorem quam nemo culpa. Facilis ea voluptatibus corrupti officiis, quo quod ipsa voluptate illum, quae omnis numquam facere similique explicabo. Sunt nihil cupiditate fugit? Distinctio, nam modi! Quas, sed reiciendis esse aut iste repellat eius, quis veniam impedit aspernatur porro adipisci minus quaerat laborum culpa mollitia totam omnis aperiam laudantium, hic beatae quae corporis. Adipisci eius molestiae odit atque magni explicabo facilis eos debitis aliquam consectetur voluptate excepturi consequatur, illum repudiandae animi tempora iusto laudantium deserunt tenetur. Nulla sunt, rerum animi atque iure sit a, aspernatur ratione veritatis qui, est numquam officia! Doloribus doloremque ducimus, deserunt rerum eveniet aliquam natus facere tenetur quos laborum eos saepe explicabo dignissimos labore aperiam ipsa fugit, beatae vitae error commodi. Hic laudantium sunt labore aut unde non autem nam. Delectus dolores, mollitia voluptatem unde praesentium doloribus. Aspernatur sunt, animi dolor amet quia, itaque magnam eligendi omnis iste voluptates nulla earum dolorum, obcaecati rem architecto distinctio asperiores qui voluptatem exercitationem explicabo perspiciatis quos voluptate. Corrupti labore maxime deleniti, voluptas nemo velit aliquid quaerat! Mollitia impedit odio in facilis rem fugiat est, accusantium molestiae neque debitis quis. Nam est consequuntur eligendi odio, quam vitae laudantium magni ut at tempore debitis aliquam id nulla illum expedita non eos earum beatae nobis, laborum repellat modi aliquid labore? Alias, porro praesentium recusandae voluptatum sint nisi? Quas voluptates esse corporis optio reiciendis ex velit facere sunt a, beatae eligendi, deserunt neque at totam. Nobis repellat sint delectus, officiis maxime odio autem nostrum explicabo natus aspernatur! Deleniti, ab quam possimus veritatis aspernatur nobis molestias. Quis enim ut, optio obcaecati nisi eum illo perspiciatis officia odit, magni dicta modi inventore aliquam. Sit at perspiciatis, consequatur illo tempore reiciendis provident ad possimus dolor, et aut dicta rem libero mollitia quasi sapiente! Voluptas magni quis, culpa laborum eos itaque explicabo facilis corrupti accusamus, doloribus numquam tempora? Vitae voluptatem aut delectus sit fugit, accusamus, ipsa doloribus quo nihil in sapiente a accusantium earum molestiae et hic libero quasi eligendi dolor, atque error perspiciatis corrupti ad. Eius facere earum cupiditate sed minus nesciunt esse! Dicta laboriosam sapiente molestiae, enim alias facere reiciendis, eligendi tempora, pariatur hic quam sit itaque iste. Molestias ad nesciunt nulla maxime laudantium mollitia praesentium pariatur eius esse nobis eligendi quo perferendis fuga exercitationem, atque quis debitis illum corrupti accusantium, architecto rerum voluptas ut soluta magni! Sunt quas debitis, optio nostrum quibusdam necessitatibus delectus dolore tempora! Ad perferendis quam nulla eaque ex possimus totam similique, minus odit vitae exercitationem molestiae. Aut odit voluptatibus ipsa repudiandae magnam fugit ducimus sunt nisi quibusdam assumenda, dignissimos maxime, a, inventore quod suscipit repellat explicabo accusantium aperiam? Quaerat necessitatibus mollitia natus magni, iure neque qui, repellat modi unde dicta possimus, quibusdam vero eaque impedit consectetur animi similique molestiae a aliquam minima officiis illo nostrum! Consequuntur porro repudiandae officia neque corporis excepturi voluptate quaerat, vero vel! Repellat cupiditate soluta eaque nemo?", 
+              attributedspoints: 35, 
+              date : "20.12.2009 17:07",
+              projectsImg: require("@/assets/qnaImg.png"),
+              specialPost:true,
+              flagImg: require("@/assets/Flaggen/Visp_flag.png"),
+              url: null
+              },
+              {
+              ID:4, 
+              Vorname: "Michael",
+              Nachname: "Bodenmatter",
+              profilePictureImg: require("@/assets/Profilpictures/profilePicture (1).jpg"), 
+              titel : "Projekt",
+              post:"Ich möchte eure Meinung über mein Projekt wissen!", 
+              attributedspoints: 758, 
+              date : "17.12.2009 15:34",
+              projectsImg: require("@/assets/projectsImg.png"),
+              specialPost:true,
+              flagImg: require("@/assets/Flaggen/Brig_flag.png"),
+              url:"https://www.youtube.com/embed/watch?v=xJAfLdUgdc4&list=PLjcjAqAnHd1EIxV4FSZIiJZvsdrBc1Xho&ab_channel=WaelYasmina"
+              }
+              ],
+             
     }
   },
   components: {
-    HomeViewComponent
+    HomeViewComponent,
+    EmptyHomeViewComponent
   }
 }
 </script>
@@ -68,22 +111,8 @@ export default {
   color: aliceblue;
   margin : 15px 15px 15px 15px;
 }
-.flaggeborder {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  border:solid black 2px;
-  border-radius: 100%;
-  background-color: rgb(148, 144, 141);
-}
-.flaggeborder:hover {
-  opacity: 0.7;
-}
-.flagimg{
-  height: 70%;
-}
+
+
 .homeContainer{
   z-index: 1;
   position: relative;
@@ -113,9 +142,18 @@ export default {
   background-color: rgb(216, 216, 216);
   
 }
-.HomeViewComponent {
+.homeViewComponent {
   width: 100%;
 
+}
+.input {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inputHomeComponent {
+  margin: 50px;
 }
 .home {
   display: block;

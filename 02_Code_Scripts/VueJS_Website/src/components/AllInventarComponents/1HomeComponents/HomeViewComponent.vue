@@ -1,20 +1,29 @@
 <template> 
 <div class="Postcontainer">
     <div class="Post">
-        <div class="photoPlacement">
-            <img class="profilePictureImg" :src="profilePictureImg1" alt="">
+        <div class="photoAndNamePlacement">
+            <div class="photoPlacement">
+                <img class="profilePictureImg" :src="datacharacter.profilePictureImg" alt="">
+            </div>
+            <div class="namePlacement">
+                <h2 class="titel">{{ datacharacter.Vorname }} - {{ datacharacter.Nachname }}</h2>
+                <img :src="datacharacter.flagImg" alt="" class="flagimg">
+                
+            </div>
         </div>
-        <div class="typeOfPost">
-            <img class="profilePictureImg" :src="projectsImg" alt="">
+        <div class="typeOfPost" v-if="datacharacter.specialPost">
+            <img class="profilePictureImg" :src="datacharacter.projectsImg" alt="">
         </div>
-        <div class="post" >
-            {{ datapoints.post }}
+        <div class="postAndTitel">
+            <h1 class="titel">{{ datacharacter.titel }}</h1>
+            <iframe :src="datacharacter.url" v-if="url" width="500px" height="200px"  frameborder="0"></iframe>
+            <div class="post">{{ datacharacter.post }}</div>
         </div>
         <div class="points">
-            {{ datapoints.attributedspoints }}
+            {{ datacharacter.attributedspoints }}
         </div>
         <div class="dateAndHour">
-           
+            {{ datacharacter.date }}
         </div>
     </div>  
 </div>
@@ -25,13 +34,11 @@
     export default {
        data() {
             return {
-                profilePictureImg1: require("@/assets/Profilpictures/profilePicture (1).jpg"),
-                post1:"Ich habe heute gut geschlafen! ",
-                projectsImg: require("@/assets/projectsImg.png"),
                 }
             },
-            props: {
-                datapoints:Object
+            props: 
+            {
+                datacharacter:Object,   
             },
             methods: {
                 changeColorPoints() {
@@ -53,11 +60,9 @@
     position: relative;
     background-color: rgb(250, 192, 120);
     /*text-position*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
     /*size*/
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     width: 100%;
     /*margins*/ 
     margin-top:20px;
@@ -65,8 +70,7 @@
     border: solid rgb(75, 66, 66) 1px;
     border-radius: 5px;
 }
-
-.photoPlacement {
+.photoAndNamePlacement {
     /*div-position*/
     position:absolute;
     /*text-position*/
@@ -83,15 +87,70 @@
     width: 70px;
     height: 70px;
     /*colors*/
+    
+}
+
+.photoPlacement {
+    z-index: 20;
+    /*div-position*/
+    position:absolute;
+    /*borders*/ 
+    border: solid black 2px;
+    border-radius: 100%;
+    /*size*/ 
+    width: 70px;
+    height: 70px;
+    /*colors*/
     background-color: rgb(148, 144, 141);
 }
+.namePlacement {
+    z-index: 15;
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width : 300px;
+    height: 30px;
+    font-size: 10px;
+    top: 10px;
+    left: 50px;
+    border: solid black 2px;
+    border-radius: 5px;
+    background-color: rgb(189, 129, 83);
+}
+ 
+.flaggeborder:hover {
+  opacity: 0.7;
+}
+.flagimg{
+    position: absolute;
+    top: -20px;
+    left: 270px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: auto;
+    
+}
+
 .profilePictureImg {
     height:100%;
     width:100%;
     border-radius: 100%;
 }
+.postAndTitel {
+    
+}
+.titel {
+    display: block;
+    width: 100%;
+    margin: 30px;
+}
 .post {
-
+    display: flex;
+    justify-content: left;
+    margin: 40px;
 }
 
 .typeOfPost {

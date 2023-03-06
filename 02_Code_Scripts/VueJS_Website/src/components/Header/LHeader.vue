@@ -1,32 +1,49 @@
 <template>
-  <div class="menubar">
+  <div class="menubarcontainer">
+    <div class="menubar">
     <div v-if="login">
       <!--div for getting the loginbtn to the right-->
     </div>
-    <div class="loginbtnApp" v-if="!login" @click="inventarClick()">
+    <div class="InventarbtnApp" v-if="!login" @click="inventarClick()">
       Inventar
     </div>
-    <routerLink to="/" class="loginbtnApp">
-    <div>
-      Login 
+    <div class="languageAndLoginButton">
+        <img class="languageFlag" :src="languageimg1" alt="">
+        <routerLink to="/" class="noTextDecoration">
+          <div class="loginbtnApp">
+            Login 
+          </div>
+        </routerLink>
+        <div class="returnbtn" v-if="login" @click="returnClick()">
+          <img class="returnImg" v-bind:src=returnImg alt="">
+        </div> 
+      </div>
     </div>
-  </routerLink>
-    <div class="returnbtn" v-if="login" @click="returnClick()">
-      <img class="returnImg" v-bind:src=returnImg alt="">
-    </div>
+        <div class="languageMenu">
+          sdfe
+        </div>
   </div>
+  
+  
 </template>
 
 <script>
 export default {
   data() {
     return {
+      languageimg1 : require("@/assets/languages/german.png"),
+      language: [
+        {languageID:1,languageimg:require("@/assets/languages/german.png")},
+        {languageID:2,languageimg:require("@/assets/languages/french.png")},
+        {languageID:3,languageimg:require("@/assets/languages/english.png")},
+        {languageID:4,languageimg:require("@/assets/languages/italian.png")}
+    ],
       returnImg: require("@/assets/return.png")
     }
   },
  
   methods: {
-    inventarClick:function () {
+    inventarClick:function() {
       if(this.inventar == true){
         this.inventar = false
         this.$emit("inventar",this.inventar)
@@ -49,6 +66,9 @@ export default {
   }
 </script>
 <style>
+.menubarcontainer {
+  position: relative;
+}
 .menubar {
   z-index: 500;
   background-image: linear-gradient(90deg, var(--colorgradient2), var(--colorgradient1));
@@ -63,15 +83,48 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-
+.InventarbtnApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4c777;
+  cursor: pointer;
+  width: 90px;
+  height: 80%;
+  color: black;
+  margin: 20px;
+  border: solid #ebb521 2px;
+  border-radius: 5px;
+}
+.noTextDecoration {
+  text-decoration: none;
+}
+.languageAndLoginButton {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 40px;
+  width: 150px;
+  height: 100%;
+}
+.languageFlag {
+  height: 30px;
+}
+.languageFlag:hover {
+  opacity: 0.7;
+}
 .loginbtnApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   background-color: #e4c777;
-  padding: 5px;
-  margin: 40px;
   cursor: pointer;
-  width: 100px;
+  width: 90px;
+  height: 90%;
   color: black;
+  margin: 20px;
+  padding: 10px;
   border: solid #ebb521 2px;
   border-radius: 5px;
 }
@@ -102,5 +155,14 @@ export default {
 
 .returnbtn:hover {
   opacity: 0.8;
+}
+.languageMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #838181;
+  width: 150px;
+  height: 20px;
+  border: solid #000000 2px;
 }
 </style>
