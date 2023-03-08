@@ -34,14 +34,15 @@ export default {
               },
               {
               ID:5, 
-              Vorname: "Melanie",
-              Nachname: "Felix",
+             
+              Vorname: "Hans",
+              Nachname: "Geiger",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (2).jpg"), 
               },
               {
               ID:4,
-              Vorname: "Hans",
-              Nachname: "Geiger",
+              Vorname: "Melanie",
+              Nachname: "Felix",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (3).jpg"), 
               },
               {
@@ -58,8 +59,8 @@ export default {
               },
               {
               ID:1,
-              Vorname: "Brigitte",
-              Nachname: "Geiger",
+              Vorname: "Tom",
+              Nachname: "Fischermann",
               profilePictureImg: require("@/assets/Profilpictures/profilePicture (6).jpg"), 
               },
             ]  

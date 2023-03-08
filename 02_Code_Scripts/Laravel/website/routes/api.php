@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MessagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,13 @@ Route::prefix('/user')->group( function () {
     Route::post('/store', [UserController::class, 'store']);
     Route::put('/{id}', [UserController::class, 'update']);
     Route::delete('/{id}', [UserController::class, 'destroy']);
+    }
+);
+Route::get('/messages', [MessagesController::class , 'index']);
+Route::prefix('/message')->group( function () {
+    Route::post('/store', [MessagesController::class, 'store']);
+    Route::put('/{id}', [MessagesController::class, 'update']);
+    Route::delete('/{id}', [MessagesController::class, 'destroy']);
     }
 );
 ?>

@@ -6,17 +6,22 @@
       </div>
       <div class="inputgroup">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="text" placeholder="Enter Username" name="uname" required v-model="this.RegisterUsername">
       </div>
   
       <div class="inputgroup">
+        <label for="psw"><b>Email</b></label>
+        <input type="email" placeholder="Enter Password" name="psw" required  v-model="this.RegisterUseremail">
+      </div>
+      <div class="inputgroup">
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+        <input type="password" placeholder="Enter Password" name="psw" required v-model="this.RegisterUserpassword">
       </div>
   
       <div class="undercontainer">
         <div class="btnborder">
-          <button class="signUpbtn" >
+          <button class="signUpbtn" @click="signup()">
             Account erstellen
           </button>
         </div>
@@ -34,15 +39,37 @@
   export default {
     data() {
       return {
-        
+        RegisterUsername:undefined,
+        RegisterUseremail:undefined,
+        RegisterUserpassword:undefined
       }
     },
     methods:{
       signup(){
-        fetch('http://example.com/movies.json')
+        const data = {
+        users: {
+          user_name: this.RegisterUsername,
+          user_email: this.RegisterUsername,
+          user_pw: this.RegisterUserpassword,
+        },
+      };
+        fetch("http://localhost:8000/api/user/store", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
         .then((response) => response.json())
-        .then((data) => console.log(data));
-      }
+        .then((data) => {
+          //Funktion nach erfolgreiches registrieren
+          window.location.reload()
+          console.log(data)
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      },
     }
   }
   </script>

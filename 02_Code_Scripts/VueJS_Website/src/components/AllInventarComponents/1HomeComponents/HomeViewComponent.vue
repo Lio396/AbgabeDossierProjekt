@@ -3,27 +3,27 @@
         <div class="Post">
             <div class="photoAndNamePlacement">
                 <div class="photoPlacement">
-                    <img class="profilePictureImg" :src="datacharacter.profilePictureImg" alt="">
+                    <img class="profilePictureImg" :src="img" alt="">
                 </div>
                 <div class="namePlacement">
-                    <h2 class="titel">{{ datacharacter.Vorname }} - {{ datacharacter.Nachname }}</h2>
+                    <h2 class="titel">{{ datacharacter.name }}</h2>
                     <img :src="datacharacter.flagImg" alt="" class="flagimg">
 
                 </div>
             </div>
             <div class="typeOfPost" v-if="datacharacter.specialPost">
-                <img class="profilePictureImg" :src="datacharacter.projectsImg" alt="">
+                <img class="profilePictureImg" :src="img" alt="">
             </div>
             <div class="postAndTitel">
                 <h1 class="titel">{{ datacharacter.titel }}</h1>
                 <iframe :src="datacharacter.url" v-if="url" width="500px" height="200px" frameborder="0"></iframe>
-                <div class="post">{{ datacharacter.post }}</div>
+                <div class="post">{{ datacharacter.msg }}</div>
             </div>
             <div class="points" id="pointsi">
                 {{ datacharacter.attributedpoints }}
             </div>
             <div class="dateAndHour">
-                {{ datacharacter.date }} - {{datacharacter.hour}}
+                {{ datacharacter.date }} - {{datacharacter.time}}
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
 export default {
     data() {
         return {
-
+            img: require("@/assets/Profilpictures/profilePicture (1).jpg")
         }
     },
     props:
@@ -51,7 +51,15 @@ export default {
                 document.getElementsByClassName("points").varColor.style.color = "black"
             }
         }
-    }
+    },
+    // mounted(){
+    //     if (this.datacharacter.attributedpoints > 70) {
+    //             document.getElementsByClassName("points").varColor.style.color = "blue"
+    //         }
+    //         else {
+    //             document.getElementsByClassName("points").varColor.style.color = "black"
+    //         }
+    // }
 }
 </script>
 

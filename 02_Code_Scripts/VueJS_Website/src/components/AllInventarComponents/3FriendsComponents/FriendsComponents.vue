@@ -21,6 +21,7 @@ export default{
 
 <style>
 .outerContainerFriends{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +30,12 @@ export default{
 .outerContainerFriends:hover {
     opacity: 0.7;
 }
-
+.iconProfileOfFriends:hover {
+    top: -20px;
+    left: -20px;
+    height: 120px;
+    width: 120px; 
+}
 .iconProfileOfFriends {
     border: solid black 2px;
     height : 50px;
@@ -41,6 +47,7 @@ export default{
     height: 30px;
 }
 .underContainerFriends{
+    
     display: flex;
     justify-content: left;
     align-items: center;
@@ -55,5 +62,6 @@ export default{
     background-color: rgb(148, 144, 141);
     overflow: hidden;
 }
+
 
 </style>

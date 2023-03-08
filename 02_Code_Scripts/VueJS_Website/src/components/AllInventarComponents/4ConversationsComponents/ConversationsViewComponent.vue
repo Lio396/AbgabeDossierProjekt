@@ -1,7 +1,7 @@
 <template>
     <div class="outerContainerConversations">
         <div class="vornameAndNachnameConversations">
-            {{ dataCharacterConversations.Vorname }}  {{ dataCharacterConversations.Nachname }}
+            {{ dataCharacterConversations.Vorname }} - {{ dataCharacterConversations.Nachname }}
         </div>
         <div class="profileAndMessageConversations">
             <div class="iconProfileOfConversations">
@@ -34,16 +34,18 @@ export default {
 
 .vornameAndNachnameConversations {
     display: block;
-    width: 150px;
+    width: 200px;
     border: solid black 2px;
     border-radius: 5px;
     background-color: rgb(148, 144, 141);
 }
 .profileAndMessageConversations{
+    position: relative;
     display: flex;
     align-items: center;
 }
 .iconProfileOfConversations {
+    position: absolute;
     border: solid black 2px;
     height : 50px;
     width: 50px;
@@ -51,17 +53,26 @@ export default {
     background-color: rgb(148, 144, 141);
     margin: 10px;
 }
+.iconProfileOfConversations:hover {
+    top: -20px;
+    left: -20px;
+    height: 120px;
+    width: 120px; 
+}
 .underContainerConversations{
     /*borders*/ 
     margin-left: 10px;
     border: solid black 2px;
     border-radius: 5px;
     /*size*/ 
-    height: 50px;
-    width: 400px;
+    height: 40px;
+    width: 350px;
     /*colors*/
     background-color: rgb(148, 144, 141);
     overflow: hidden;
+    padding: 5px 10px 5px 10px;
+    margin-left: 100px;
+    margin-top: 10px;
 }
 .dateConversations {
     width: 100px;
@@ -70,5 +81,6 @@ export default {
     background-color: rgb(148, 144, 141);
     margin-left: 80%;
 }
+
 
 </style>

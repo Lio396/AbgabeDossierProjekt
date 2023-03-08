@@ -1,11 +1,49 @@
 <template> 
 <div >
-  <input class="inputForPost" type="text" placeholder="Tippe deine Meinung ein !">
+  <input class="inputForPost" type="text" placeholder="Tippe deine Meinung ein !" v-model="this.msg" >
+  <button @click="sendmsg()">send</button>
 </div> 
 </template>
 
 <script>
     export default {
+      data(){
+        return{
+          msg:"",
+          
+        }
+      },
+      methods:{
+        sendmsg(){
+          let date = new Date()
+          let t =date.getHours()+":"+date.getMinutes()
+          let d = date.getDay()+"."+date.getMonth()+"."+date.getFullYear()
+          const data = {
+        msg: {
+          userid: parseInt(sessionStorage.getItem("userid")),
+          message: this.msg,
+         time:t ,
+         date: d
+        },
+      };
+        fetch("http://localhost:8000/api/message/store", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          //Funktion nach erfolgreiches registrieren
+          window.location.reload()
+          console.log(data)
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+        }
+      }
         }
 </script>
 <style>

@@ -7,6 +7,7 @@
     <div class="InventarbtnApp" v-if="!login" @click="inventarClick()">
       Inventar
     </div>
+    <p> eingeloggt als {{this.username  }}</p>
     <div class="languageAndLoginButton">
         <img class="languageFlag" :src="languageimg1" alt="">
         <routerLink to="/" class="noTextDecoration">
@@ -31,6 +32,7 @@
 export default {
   data() {
     return {
+      username:sessionStorage.getItem("username"),
       languageimg1 : require("@/assets/languages/german.png"),
       language: [
         {languageID:1,languageimg:require("@/assets/languages/german.png")},

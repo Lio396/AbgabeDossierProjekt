@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Users;
+use App\Models\Messages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
-class UserController extends Controller
+class MessagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class UserController extends Controller
      //get all of the Database orderd Descaled
     public function index()
     {
-        return Users::orderBy('user_name','DESC')->get();
+        return Messages::orderBy('id','DESC')->get();
     }
 
     /**
@@ -38,10 +38,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $newItem = new Users;
-        $newItem->user_name = $request->users["user_name"];
-        $newItem->user_email = $request->users["user_email"];
-        $newItem->user_pw = $request->users["user_pw"];
+        $newItem = new Messages;
+        $newItem->msg = $request->msg["message"];
+        $newItem->userid = $request->msg["userid"];
+        $newItem->time = $request->msg["time"];
+        $newItem->date = $request->msg["date"];
         $newItem->save();
         return $newItem;
     }
