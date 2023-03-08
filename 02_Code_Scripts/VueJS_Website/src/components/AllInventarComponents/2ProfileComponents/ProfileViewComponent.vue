@@ -92,8 +92,8 @@ export default {
     height: 300px;
 }
 .flagInProfile{
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
 }
 .inf1 {
     display: flex;
