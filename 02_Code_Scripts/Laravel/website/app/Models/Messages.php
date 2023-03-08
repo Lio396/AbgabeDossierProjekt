@@ -9,3 +9,4 @@ class Messages extends Model
 {
     use HasFactory;
 }
+?>

@@ -13,10 +13,15 @@
         <label for="psw"><b>Email</b></label>
         <input type="email" placeholder="Enter Password" name="psw" required  v-model="this.RegisterUseremail">
       </div>
+
       <div class="inputgroup">
         <label for="psw"><b>Password</b></label>
-        
         <input type="password" placeholder="Enter Password" name="psw" required v-model="this.RegisterUserpassword">
+      </div>
+
+      <div class="inputgroup">
+        <label for="psw"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Reenter Password" name="psw" required v-model="this.RegisterUserpassword">
       </div>
   
       <div class="undercontainer">
@@ -86,7 +91,7 @@
     justify-content: center;
   }
   
-  input[type=text], input[type=password] {
+  input[type=text],input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 20px 0;
@@ -101,7 +106,7 @@
   }
   
   .containersignUp {
-    height: 500px;
+    height: 100%;
     width: 300px;
     padding: 20px;
     border: solid black 3px;

@@ -1,8 +1,18 @@
 <template> 
-<div >
-  <input class="inputForPost" type="text" placeholder="Tippe deine Meinung ein !" v-model="this.msg" >
-  <button @click="sendmsg()">send</button>
-</div> 
+<div class="Postcontainer">
+        <div class="Post">
+              <h2 class="titel"></h2>
+            <div class="postAndTitel">
+                <h1 class="titel"></h1>
+                <div class="post">
+                  <input class="inputForPost" type="text" placeholder="Tippe deine Meinung ein !" v-model="this.msg" >
+                </div>
+            </div> 
+            <div class="postMessageBorder">
+              <button class="postMessagebtn" @click="sendmsg()">Post</button> 
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -48,7 +58,7 @@
 </script>
 <style>
 .inputForPost {
-    background-color: rgb(250, 192, 120);
+    background-color: rgb(238, 166, 79);
 }
 .inputForPost:focus{
     border:solid rgb(97, 70, 36) 3px;
@@ -58,6 +68,25 @@
   color: rgb(20, 20, 20);
   opacity: 1; 
 }
+.postMessageBorder{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+.postMessagebtn {
+    background-color: #e4c777;
+    padding: 14px 20px;
+    cursor: pointer;
+    width: 15%;
+    color:black;
+    border:solid #ebb521 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+  }
 </style>
 
 

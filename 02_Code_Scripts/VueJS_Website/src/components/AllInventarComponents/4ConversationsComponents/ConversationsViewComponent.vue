@@ -38,6 +38,7 @@ export default {
     border: solid black 2px;
     border-radius: 5px;
     background-color: rgb(148, 144, 141);
+    padding: 5px;
 }
 .profileAndMessageConversations{
     position: relative;
@@ -51,7 +52,8 @@ export default {
     width: 50px;
     border-radius: 100%;
     background-color: rgb(148, 144, 141);
-    margin: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 .iconProfileOfConversations:hover {
     top: -20px;
@@ -80,6 +82,7 @@ export default {
     border-radius: 5px;
     background-color: rgb(148, 144, 141);
     margin-left: 80%;
+    margin-top: 10px;
 }
 
 

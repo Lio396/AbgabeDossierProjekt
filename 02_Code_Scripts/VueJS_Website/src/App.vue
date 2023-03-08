@@ -28,7 +28,6 @@ export default {
           inventar: false,
           login: false,
           signUp: false,
-          
         }
     },
     components: {

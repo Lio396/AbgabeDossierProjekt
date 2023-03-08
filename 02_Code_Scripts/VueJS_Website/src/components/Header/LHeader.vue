@@ -7,17 +7,15 @@
     <div class="InventarbtnApp" v-if="!login" @click="inventarClick()">
       Inventar
     </div>
-    <p> eingeloggt als {{this.username  }}</p>
+    
     <div class="languageAndLoginButton">
         <img class="languageFlag" :src="languageimg1" alt="">
         <routerLink to="/" class="noTextDecoration">
-          <div class="loginbtnApp">
+          <p v-if="logedIn"> eingeloggt als {{this.username}}</p>
+          <div class="loginbtnApp" v-if="!login">
             Login 
           </div>
         </routerLink>
-        <div class="returnbtn" v-if="login" @click="returnClick()">
-          <img class="returnImg" v-bind:src=returnImg alt="">
-        </div> 
       </div>
     </div>
         <div class="languageMenu">

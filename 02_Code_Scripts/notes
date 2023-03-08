@@ -1,1 +1,2 @@
 composer update ramsey/uuid //composer Autoload fail
+composer update --ignore-platform-reqs

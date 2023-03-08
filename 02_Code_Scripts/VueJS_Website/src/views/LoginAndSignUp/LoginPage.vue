@@ -6,18 +6,15 @@
         <h2>Login Form</h2>
       </div>
       <div class="inputgroup">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required v-model="this.loginUsername">
+        <label for="uname"><b>Username or Email</b></label>
+        <input type="text" placeholder="Enter Username or Email" name="uname" required v-model="this.loginUsername">
       </div>
 
       <div class="inputgroup">
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required v-model="this.loginUserpassword">
       </div>
-      <div class="inputgroup">
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required v-model="this.loginUseremail">
-      </div>
+      
 
       <div class="inputgroup">
         <label>
@@ -41,6 +38,7 @@
 export default {
   data() {
     return {
+      logedIn:false,
       loginUsername: undefined,
       loginUseremail: undefined,
       loginUserpassword: undefined,
@@ -49,6 +47,7 @@ export default {
   },
 
   methods: {
+
     signin() {
       fetch("http://localhost:8000/api/users")
         .then((response) => response.text())
@@ -57,13 +56,14 @@ export default {
           this.logindataDB.forEach((element) => {
           
             if (
-              element.user_name == this.loginUsername &&
+              element.user_name == this.loginUsername ||
               element.user_email == this.loginUseremail &&
               element.user_pw == this.loginUserpassword
             ) { 
               window.location.href = "/home";
               sessionStorage.setItem("username", this.loginUsername);
               sessionStorage.setItem("userid", element.id);
+              this.logedIn=true;
               
             }
           });

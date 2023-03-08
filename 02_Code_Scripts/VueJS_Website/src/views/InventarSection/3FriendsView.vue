@@ -125,8 +125,12 @@ export default {
   width: 30px;
   opacity: 0.5;
  }
- .FriendsComponent{
-  height: 100%;
+ .friendsComponents{
+    border: solid rgba(143, 143, 143, 0.267) 1px;
+    border-radius: 10px;
+    height: 100%;
+    margin-top: 30px;
+    background-color: rgba(148, 144, 141, 0.185);
  }
  .inputFriendsComponent {
   background-color: rgb(148, 144, 141);
