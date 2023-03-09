@@ -29,11 +29,11 @@
           let t =date.getHours()+":"+date.getMinutes()
           let d = date.getDay()+"."+date.getMonth()+"."+date.getFullYear()
           const data = {
-          msg: {
-          userid: parseInt(sessionStorage.getItem("userid")),
-          message: this.msg,
-          time: t,
-          date: d
+                    msg: {
+                    userid: parseInt(sessionStorage.getItem("userid")),
+                    message: this.msg,
+                    time: t,
+                    date: d
         },
       };
         fetch("http://localhost:8000/api/message/store", {
@@ -46,7 +46,7 @@
         .then((response) => response.json())
         .then((data) => {
           //Funktion nach erfolgreiches registrieren
-          
+          window.location.reload()
           console.log(data)
         })
         .catch((error) => {

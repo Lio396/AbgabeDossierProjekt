@@ -36,6 +36,7 @@ export default {
     data() {
         return {
             img: require("@/assets/Profilpictures/profilePicture (1).jpg")
+
         }
     },
     props:
