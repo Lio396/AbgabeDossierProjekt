@@ -34,6 +34,7 @@ import EmptyHomeViewComponent from '@/components/AllInventarComponents/1HomeComp
 export default {
   data(){
     return {
+      character:[],
       username: sessionStorage.getItem("username")
     }
   },

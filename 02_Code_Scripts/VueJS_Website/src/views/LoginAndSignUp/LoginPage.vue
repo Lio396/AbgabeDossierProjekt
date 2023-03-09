@@ -1,10 +1,12 @@
 <template>
   <div class="login">
+    
     <div class="externdiv"></div>
     <div class="containerLogin">
       <div class="uppercontainer">
         <h2>Login Form</h2>
       </div>
+      <p :v-if="logedIn"> eingeloggt als {{this.username}}</p>
       <div class="inputgroup">
         <label for="uname"><b>Username or Email</b></label>
         <input type="text" placeholder="Enter Username or Email" name="uname" required v-model="this.loginUsername">
@@ -31,14 +33,17 @@
       </div>
     </div>
     <div class="externdiv"></div>
+    
   </div>
+ 
 </template>
   
 <script>
 export default {
   data() {
     return {
-      logedIn:false,
+      username:sessionStorage.getItem("username"),
+      logedIn : false,
       loginUsername: undefined,
       loginUseremail: undefined,
       loginUserpassword: undefined,
@@ -63,8 +68,7 @@ export default {
               window.location.href = "/home";
               sessionStorage.setItem("username", this.loginUsername);
               sessionStorage.setItem("userid", element.id);
-              this.logedIn=true;
-              
+              this.logedIn = true;
             }
           });
         });
@@ -119,7 +123,7 @@ input[type=password] {
 }
 
 .containerLogin {
-  height: 500px;
+  height: 100%;
   width: 300px;
   padding: 20px;
   border: solid black 3px;

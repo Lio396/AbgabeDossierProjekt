@@ -4,6 +4,7 @@
     <div v-if="login">
       <!--div for getting the loginbtn to the right-->
     </div>
+    
     <div class="InventarbtnApp" v-if="!login" @click="inventarClick()">
       Inventar
     </div>
@@ -11,7 +12,7 @@
     <div class="languageAndLoginButton">
         <img class="languageFlag" :src="languageimg1" alt="">
         <routerLink to="/" class="noTextDecoration">
-          <p v-if="logedIn"> eingeloggt als {{this.username}}</p>
+          
           <div class="loginbtnApp" v-if="!login">
             Login 
           </div>
@@ -30,7 +31,7 @@
 export default {
   data() {
     return {
-      username:sessionStorage.getItem("username"),
+      
       languageimg1 : require("@/assets/languages/german.png"),
       language: [
         {languageID:1,languageimg:require("@/assets/languages/german.png")},
