@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('user_name');
             $table->string('user_pw');
             $table->string('user_email');
-
             $table->timestamps();
         });
     }

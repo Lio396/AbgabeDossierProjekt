@@ -11,7 +11,7 @@
   
       <div class="inputgroup">
         <label for="psw"><b>Email</b></label>
-        <input type="email" placeholder="Enter Password" name="psw" required  v-model="this.RegisterUseremail">
+        <input type="email" placeholder="Enter Email" name="psw" required  v-model="this.RegisterUseremail">
       </div>
 
       <div class="inputgroup">
